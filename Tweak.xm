@@ -7,7 +7,18 @@ inline bool GetPrefBool(NSString *key) {
 return [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:key] boolValue];
 }
 
+/**
+NOTE: this tweak was made in very short time. I didn't bother setting user defaults, using 
+callbacks, and read directly from settings plist file.  This project was a "quickie tweak" that was way
+more popular then I expected, hence the need to update for iOS 11 quirks, and maybe do settings the
+proper way with defaults and post notifications.  Kind of embrarassed sharing this code but am 
+limited in time, and would love anyone wishing to collab. Will credit you in pref bundle.
+**/
+
 %hook SBDashBoardViewController
+
+// Lockscreen autorotate if enabled and LS (key1) is selected.
+
 -(bool) shouldAutorotate {
 if((GetPrefBool(@"enabled"))&& (GetPrefBool(@"key1"))) {
 %orig;
@@ -20,6 +31,7 @@ return %orig;
 
 
 %hook SBMedusaSettings
+//Necessary to rotate and not crash SB
 -(bool)anyRotationDebuggingEnabled {
 if(GetPrefBool(@"enabled")) {
 %orig;
@@ -31,16 +43,19 @@ return %orig;
 
 %hook SpringBoard
 -(long long) homeScreenRotationStyle {
+//IF stacked rotation (key2) and enabled choose stacked style
 if((GetPrefBool(@"enabled")) 
 && (GetPrefBool(@"key2"))) {
 %orig;
 return 1;
 }
+//Else if iOS 11 style rotation rotate that way
 else if((GetPrefBool(@"enabled")) 
 && (GetPrefBool(@"key3"))) {
 %orig;
 return 2;
 }
+//Else obviously do nothing
 else {
 return %orig;
 }
@@ -50,6 +65,7 @@ return %orig;
 %hook CCUIControlCenterPageContainerViewController
 -(long long) layoutStyle {
 if(GetPrefBool(@"key31")) {
+//CC shifted layout for iOS 10, does nothing in 11
 %orig;
 return 1;
 }
