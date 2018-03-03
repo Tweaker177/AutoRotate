@@ -1,0 +1,10 @@
+Package: com.i0stweak3r.autorotate
+Name: AutoRotate
+Depends: mobilesubstrate, preferenceloader
+Version: 1.0.2
+Architecture: iphoneos-arm
+Description: Allows iOS 11 style autorotation of home screen, and adds LS, CC and spotlight rotation. Looks great on larger iPhone models.  iOS 10.0-10.3.x
+Maintainer: i0s_tweak3r
+Author: i0s_tweak3r
+Section: Tweaks
+Homepage: http://twitter.com/brianvs 
