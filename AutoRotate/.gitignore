@@ -1,8 +1,0 @@
-_
-obj
-*.o
-theos
-*~
-*.save
-.DS_Store
-.theos
