@@ -20,15 +20,17 @@
 			<key>icon</key>
 			<string>AutoRotate@2x.png</string>
 			<key>label</key>
-			<string>AutoRotate</string>
+			<string>AutoRotate (BETA)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Enable tweak. This must be on for tweak to work.</string>
+			<string>Enable tweak. This must be on for tweak to work. Note: this tweak is a work in progress:  I don't have an X to test with, and it works on my devices. If u have issues feel free to let me know on twitter or email, or use Bigboss version.</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -40,13 +42,15 @@
 			<key>label</key>
 			<string>Enabled</string>
 		</dict>
-	<dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
 			<string>Enable rotation on lockscreen. Turn off if you only want tweak for homescreen.</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -56,15 +60,37 @@
 			<key>key</key>
 			<string>key1</string>
 			<key>label</key>
-		<string>Enable on lockscreen</string>
+			<string>Enable on lockscreen</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Rotates both dock and icons, and stacks the icons in columns. Looks great with BetterFiveIconDock.</string>
+			<string>This rotates everything except the dock(it does turn the icons in it though).</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>key3</string>
+			<key>label</key>
+			<string>iPhone plus style rotation</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Rotates dock, icons + wallpaper, and stacks the icons in tight columns. Looks great with CirDock, FloatyDock (or similar tweak) and Landscape themed setups. Snowboard makes it look better if u shrink icon size a little.</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -80,9 +106,11 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>This rotates everything except the dock(it does turn the icons in it though).</string>
+			<string>Autorotates while dragging / rearranging icons. Looks neat with them rotating at your fingertips. (iOS 11 Only)</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -90,17 +118,19 @@
 			<key>defaults</key>
 			<string>com.i0stweak3r.autorotate</string>
 			<key>key</key>
-			<string>key3</string>
+			<string>wantsDragging</string>
 			<key>label</key>
-			<string>iOS 11 styled rotation</string>
+			<string>Rotate when dragging</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Alternate layout for control center that shifts everything to the side for all orientations. By default it will change only when rotated.</string>
+			<string>Alternate layout for control center that shifts everything to the side for all orientations. By default it will change only when rotated. iOS 10 ONLY</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
@@ -111,6 +141,40 @@
 			<string>key31</string>
 			<key>label</key>
 			<string>CC always shifted</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Beta method- medusa capable rotates and splits  more apps but may cause app crashes on some devices, or with certain apps. Use with stacked layout style.</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>iPadCapable</string>
+			<key>label</key>
+			<string>medusaCapable</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Respring not needed if you change more then one option, or leave settings and go back. If not working it will set prefs correctly.</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>respring:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -153,24 +217,20 @@
 			<string>Contact me on twitter</string>
 		</dict>
 		<dict>
-			<key>action</key>
-			<string>twitter2</string>
 			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>icon</key>
-			<string>twitter.png</string>
-			<key>label</key>
-			<string>Inspired by @Prouser</string>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>action</key>
-			<string>link</string>
+			<string>donate</string>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>icon</key>
-			<string>iosgods@2x.png</string>
+			<string>paypal.png</string>
 			<key>label</key>
-			<string>Visit iOSGods.com</string>
+			<string>Help me buy an iPhoneX</string>
 		</dict>
 	</array>
 	<key>title</key>
