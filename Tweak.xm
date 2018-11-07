@@ -13,6 +13,10 @@ callbacks, and read directly from settings plist file.  This project was a "quic
 more popular then I expected, hence the need to update for iOS 11 quirks, and maybe do settings the
 proper way with defaults and post notifications.  Kind of embrarassed sharing this code but am 
 limited in time, and would love anyone wishing to collab. Will credit you in pref bundle.
+
+UPDATE: This is version currently in BigBoss. UPDATED this GitHub so now when compiled will reflect the current version
+in my beta repo. It's come alomg nicely, just need iPHONE X testers and to add AppList for one method. CURRENT tweak file is now 
+AutoRotate.xm  TWEAK now rotates all apps, some crash tho hence need for Applist if medusaCapable is selected.
 **/
 
 %hook SBDashBoardViewController
