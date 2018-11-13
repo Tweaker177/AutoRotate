@@ -2,7 +2,6 @@ ARCHS = armv7 arm64 armv7s
 TARGET = iphone:clang:9.0:9.4
 #CFLAGS = -fobjc-arc
 #THEOS_PACKAGE_DIR_NAME = debs
-
 include theos/makefiles/common.mk
 
 TWEAK_NAME = AutoRotate
