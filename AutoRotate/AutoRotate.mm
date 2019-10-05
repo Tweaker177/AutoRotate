@@ -1,6 +1,5 @@
 #import <spawn.h>
 #import <objc/runtime.h>
-#import <Preferences/Preferences.h>
 #import <Preferences/PSListController.h>
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PSTableCell.h>
@@ -12,7 +11,6 @@
 -(void)donate;
 -(void)twitter2;
 -(void)repolink;
--(void)link;
 @end
 
 @implementation AutoRotateListController
@@ -41,8 +39,14 @@
 }
 
 - (void)twitter2 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/prouser"]];
-} 
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://user?screen_name=SbhnKhrmn"]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=SbhnKhrmn"]];
+    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetbot:///user_profile/SbhnKhrmn"]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tweetbot:///user_profile/SbhnKhrmn"]];
+    }  else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/SbhnKhrmn"]];
+    }
+}
 
 - (void)donate
 {
@@ -52,10 +56,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://i0s-tweak3r-betas.yourepo.com"]];
 } 
 
-/* The "Visit iOSGods.com" link inside the Preferences button */
-- (void)link {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://iosgods.com"]];
-} 
+
 @end
 
 // vim:ft=objc
