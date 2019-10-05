@@ -20,13 +20,13 @@
 			<key>icon</key>
 			<string>AutoRotate@2x.png</string>
 			<key>label</key>
-			<string>AutoRotate (BETA)</string>
+			<string>AutoRotate Plus 12-Icon Dock (beta)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Enable tweak. This must be on for tweak to work. Note: this tweak is a work in progress:  I don't have an X to test with, and it works on my devices. If u have issues feel free to let me know on twitter or email, or use Bigboss version.</string>
+			<string>Enable tweak. This must be on for tweak to work. Note: this version is a work in progress for 11+12. Just added new dock features allowing up to 12 icons in dock, but still working on spacing and other small nuances.</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -86,7 +86,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Rotates dock, icons + wallpaper, and stacks the icons in tight columns. Looks great with CirDock, FloatyDock (or similar tweak) and Landscape themed setups. Snowboard makes it look better if u shrink icon size a little.</string>
+			<string>Rotates dock, icons + wallpaper, for iPad style rotation, and stacks the icons in tight columns. Also allows up to 12 icons in dock. (Beta feature).  Once they are added, they will stay even if stacked is off unless removed.</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -100,13 +100,41 @@
 			<key>key</key>
 			<string>key2</string>
 			<key>label</key>
-			<string>Stacked rotation</string>
+			<string>Stacked-iPad style</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>iPadCapable</string>
+			<key>label</key>
+			<string>Try to rotate more apps (beta)</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>hideLabels</string>
+			<key>label</key>
+			<string>Hide icon labels</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Autorotates while dragging / rearranging icons. Looks neat with them rotating at your fingertips. (iOS 11 Only)</string>
+			<string>Autorotates while dragging / rearranging icons. Looks neat with them rotating at your fingertips. (iOS 11-12 Only)</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -126,7 +154,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Alternate layout for control center that shifts everything to the side for all orientations. By default it will change only when rotated. iOS 10 ONLY</string>
+			<string>Alternate layout for control center that shifts everything to the side for all orientations. By default it will change only when rotated. (iOS 10 ONLY)</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -146,27 +174,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Beta method- medusa capable rotates and splits  more apps but may cause app crashes on some devices, or with certain apps. Use with stacked layout style.</string>
-		</dict>
-		<dict>
-			<key>PostNotification</key>
-			<string>com.i0stweak3r.autorotate/saved</string>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.i0stweak3r.autorotate</string>
-			<key>key</key>
-			<string>iPadCapable</string>
-			<key>label</key>
-			<string>medusaCapable</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Respring not needed if you change more then one option, or leave settings and go back. If not working it will set prefs correctly.</string>
+			<string>Resprings not needed, but can be used if a setting doesn&apos;t update immediately.</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -179,6 +187,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Additional help with the stacked layout given by @SbhnKhrmn. Thank you!</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -217,10 +227,20 @@
 			<string>Contact me on twitter</string>
 		</dict>
 		<dict>
+			<key>action</key>
+			<string>twitter2</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>twitter.png</string>
+			<key>label</key>
+			<string>@SbhnKhrmn on twitter</string>
+		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string></string>
+			<string>If you find this tweak to be useful, please consider a donation, or purchasing one of my paid tweaks. Check out FolderControllerXII, ModernBarz, ColorMyThreeD and EnableMeAhora; all are available in my repo and/or in Packix.</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -230,10 +250,10 @@
 			<key>icon</key>
 			<string>paypal.png</string>
 			<key>label</key>
-			<string>Help me buy an iPhoneX</string>
+			<string>Buy me an energy drink.</string>
 		</dict>
 	</array>
 	<key>title</key>
-	<string>AutoRotate settings</string>
+	<string>AutoRotate  Plus</string>
 </dict>
 </plist>
