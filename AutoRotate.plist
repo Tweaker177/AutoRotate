@@ -7,6 +7,8 @@
 		<key>Bundles</key>
 		<array>
 			<string>com.apple.springboard</string>
+                   <string>UIDevice</string>
+                 <string>CCUIControlCenterPageContainerViewController</string>
 		</array>
 	</dict>
 </dict>
