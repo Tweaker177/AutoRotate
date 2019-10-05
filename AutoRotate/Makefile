@@ -1,7 +1,7 @@
-ARCHS = armv7 arm64 armv7s 
-TARGET = iphone:clang:9.0:9.4
-
-include theos/makefiles/common.mk
+ARCHS = arm64 armv7 arm64e armv7s
+TARGET = iphone:clang:11.2:8.0
+DEBUG = 0
+include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = AutoRotate
 AutoRotate_FILES = AutoRotate.mm
