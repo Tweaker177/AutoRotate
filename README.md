@@ -1,4 +1,4 @@
-# AutoRotate10to13
+# AutoRotate
 Project files for AutoRotate tweak hosted by BigBoss.
 
 Made it open source and am hoping to get help improving iOS 11 version.
