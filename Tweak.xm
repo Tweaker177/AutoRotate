@@ -15,12 +15,7 @@ static bool kWantsLockscreenRotation = YES;
 
 static bool kWantsIpadStyle = YES; 
 //landscape iPad rotation style
-
-/*
-static bool kKey3 = YES;
-//iPhone plus rotation style 
-Changed settings so kKey3 basically does nothing now, since as long as tweak is enabled iPhone plus style rotation is set to be the default style.  Originally it was a switch that needed to be oh.
-*/
+//iPhone style is enabed by default unless iPad style is picked
 
 static bool kCCisAlwaysRotated = YES;
 //iOS 10 CC always shifted
@@ -96,7 +91,7 @@ return 1;
 //iPad rotation style
 }
 else if(kEnabled) {
-return 2;
+return 2;   //iphone plus style rotation
 }
 else {
 return %orig;
@@ -152,10 +147,10 @@ return %orig;
 }
 %end
 
-/****
+/*
 Note: 12-18-2019 Discovered not working on iOS 12.4 iPhone X. May be a tweak conflict, idk, but a better way to hidew icons
 is to use SBIconView's LabelAccessoryViewHidden, and / or setting alpha to zero, Works great in combo without respring.
-***/
+*/
 
 
 %hook SBIconView
@@ -216,6 +211,7 @@ if(kEnabled) {
     return 12; 
     //Allows up to 12 icons or folder icons in the dock at once.
     //Works up to iOS 12.4.3
+    //Resets back to 4 after reboot or safe mode, was going to use IconSupport for fix but changed mind
 } 
 return %orig;
 }
@@ -246,9 +242,6 @@ kWantsLockscreenRotation = [prefs boolForKey:@"key1"];
 
 kWantsIpadStyle = [prefs boolForKey:@"key2"];
 //iPadStyleRotation
-
-//kKey3 = [prefs boolForKey:@"key3"];
- //no longer used
    
 kCCisAlwaysRotated = [prefs boolForKey:@"key31"];
     //iOS 10 only so far.
