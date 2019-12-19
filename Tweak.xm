@@ -1,6 +1,12 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+/*
+#import <IconSupport/ISIconSupport.h>
+#include <dlfcn.h> //needed for dlopen (for IconSupport)
+//Was going to add IconSupport to register extra icons in Dock but not sure if it's supporting more then 4 for A12 devices
+//Decided to leave out
+*/
 
 static bool kEnabled = YES;
 static bool kiPadCapable= YES; 
@@ -39,7 +45,7 @@ return %orig;
 %end
 
 
-//iOS 11.0+ only method
+//iOS 11.0-12.4.3 only method
 
 %hook SBHomeScreenViewController
 -(bool)homeScreenAutorotatesEvenWhenIconIsDragging {
@@ -135,7 +141,8 @@ return %orig;
 }
 %end
 
-//This method hides the labels by setting scale to zero
+//This method hid the labels by setting scale to zero, worked in some cases and firmwares.
+
 %hook SBIconLabelImageParametersBuilder
 - (double)_scale {
     if(kEnabled && kHideLabels) {
@@ -144,7 +151,31 @@ return %orig;
 return %orig;
 }
 %end
-    
+
+/****
+Note: 12-18-2019 Discovered not working on iOS 12.4 iPhone X. May be a tweak conflict, idk, but a better way to hidew icons
+is to use SBIconView's LabelAccessoryViewHidden, and / or setting alpha to zero, Works great in combo without respring.
+***/
+
+
+%hook SBIconView
+-(void) setLabelAccessoryViewHidden:(bool)arg1 {
+if(kEnabled && kHideLabels) {           //sets hidden property for the view
+arg1= YES;
+return %orig(arg1);
+}
+return %orig;
+} 
+
+-(void) setIconLabelAlpha:(double)arg1 {
+if(kEnabled && kHideLabels) {
+arg1= 0;                              //hide labels by making transparent or zero alpha
+return %orig(arg1);
+}
+return %orig;
+}
+%end
+  
     %hook UIDevice
 - (void)setOrientation:(long long)arg1 animated:(bool)arg2 {
     if(kEnabled && kWantsIpadStyle) {
@@ -182,7 +213,9 @@ return %orig;
 %hook SBDockIconListView
 + (unsigned long long)maxIcons {
 if(kEnabled) {
-    return 12; //Allows up to 12 icons or folder icons in the dock at once.
+    return 12; 
+    //Allows up to 12 icons or folder icons in the dock at once.
+    //Works up to iOS 12.4.3
 } 
 return %orig;
 }
@@ -234,4 +267,13 @@ kWantsDragging = [prefs boolForKey:@"wantsDragging"];
                                     CFSTR("com.i0stweak3r.autorotate/saved"), NULL,
                                     CFNotificationSuspensionBehaviorDeliverImmediately);
     loadPrefs();
+    
+/* 
+Skipping IconSupport for now
+    // Register with IconSupport.
+	void *h = dlopen("/Library/MobileSubstrate/DynamicLibraries/IconSupport.dylib", RTLD_NOW);
+	if (h) {
+		[[objc_getClass("ISIconSupport") sharedInstance] addExtension:@"AutoRotate"];
+	}
+*/	
 }
