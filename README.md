@@ -1,9 +1,14 @@
 # AutoRotate
-Project files for AutoRotate tweak hosted by BigBoss.
+Project files for AutoRotate tweak hosted by BigBoss. (Most current version is in YouRepo)
+A simple tweak originally made for iOS 10 to rotate the homescreen and lockscreen on devices that don't natively rotate, and for plus devices, it rotates apps and the App Switcher nicely. Additional features have been added as well with labels and the dock. Configure options from settings. The current tweak is working for iOS 10-14.3, all devices, with the main homescreen and lockscreen rotation working great.   Assistance with insets for the dock with stacked rotation for iOS 12 was given by @ SbhnKhrmn. 
 
-Made it open source and am hoping to get help improving iOS 11 version.
-This tweak was originally built and published targeting iOS 10 only, but some of the main features work on iOS 11, so needed to update to squish a UI bug on 11 (stacked rotation's dock icons merged on top of each other, and were slightly above dock.)
+MOST CURRENT VERSION: You can get it from https://i0s-tweak3r-betas.yourepo.com/pack/autorotate (it's free).
+
+Made it open source hoping to get help improving the little nuances that still act up on devices that don't support normal rotation, with app rotation.
+I have since added rotation of most apps like iPAD, but for compact devices some apps aren't supported. You can just turn it off if it doesn't work right in the app you're using until I get the App Rotation working right for all device types, or just skip that option.  On iOS 14 it rotates HS widgets, though they rotate a little differently. Just updated the code so you have an idea where it's at, and am open for contributors if anyone wants to help.  
 
 
-UPDATE: I have since added rotation of most apps like iPAD, but need to add AppList simce it crashes a few apps or just looks weird on some others(splits the screen with half blank). Still have kinks to iron out. THE original BigBoss tweak.xm has been modified to update landscape bug. Assistance with insets for the dock with stacked rotation was given by @ SbhnKhrmn 
-Tweak is still beta in current version. BigBoss version works for simple rotation iOS 11 iPhone+ style for nonsupported devices, and the lockscreen rotation works same as iOS 10. Both versions work from iOS 10.0-12.4 all devices including A12.
+
+
+
+
