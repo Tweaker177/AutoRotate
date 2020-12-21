@@ -20,7 +20,7 @@
 			<key>icon</key>
 			<string>AutoRotate@2x.png</string>
 			<key>label</key>
-			<string>AutoRotate Plus 12-Icon Dock (beta)</string>
+			<string>AutoRotate (iOS 10-14)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -86,9 +86,9 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Rotates dock, icons + wallpaper, for iPad style rotation, and stacks the icons in tight columns. Also allows up to 12 icons in dock. (Beta feature).  Once they are added, they will stay even if stacked is off unless removed.</string>
+			<string>Rotates dock, icons + wallpaper, for iPad style rotation, and stacks the icons in tight columns.</string>
 		</dict>
-		<dict>
+                		<dict>
 			<key>PostNotification</key>
 			<string>com.i0stweak3r.autorotate/saved</string>
 			<key>cell</key>
@@ -114,7 +114,21 @@
 			<key>key</key>
 			<string>iPadCapable</string>
 			<key>label</key>
-			<string>Try to rotate more apps (beta)</string>
+			<string>Rotate most apps (beta)</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>wantsDeviceIdiom1</string>
+			<key>label</key>
+			<string>Mini iPad mode(beta)</string>
 		</dict>
 		<dict>
 			<key>PostNotification</key>
@@ -170,13 +184,36 @@
 			<key>label</key>
 			<string>CC always shifted</string>
 		</dict>
+<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Option to have 12 icon dock. Currently only enabled for iOS 10-12. Will work on 13 and 14 at a later time. FolderControllerXIII allows custom dock layouts for iOS 13 and 14 already.</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>wantsCustomDock</string>
+			<key>label</key>
+			<string>Enable 12 Icon Dock</string>
+		</dict>
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Resprings not needed, but can be used if a setting doesn&apos;t update immediately.</string>
+			<string>Resprings not needed on iOS 10-12, but should be used if a setting does not update immediately, or on a higher iOS version.</string>
 		</dict>
 		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
 			<key>action</key>
 			<string>respring:</string>
 			<key>cell</key>
@@ -187,16 +224,8 @@
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>Additional help with the stacked layout given by @SbhnKhrmn. Thank you!</string>
-		</dict>
-		<dict>
-			<key>action</key>
-			<string>repolink</string>
-			<key>cell</key>
-			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>👉 Add my repo for more tweaks.</string>
+			<string>Credits</string>
 		</dict>
 		<dict>
 			<key>alignment</key>
@@ -211,12 +240,26 @@
 			<string>Made by i0s_tweak3r.</string>
 		</dict>
 		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
+			<key>cell</key>
+			<string>PSTitleValueCell</string>
+			<key>height</key>
+			<integer>36</integer>
+			<key>icon</key>
+			<string>SK9.png</string>
+			<key>label</key>
+			<string>With help from SbhnKhrmn</string>
+		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
 			<string></string>
 		</dict>
 		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
 			<key>action</key>
 			<string>twitter</string>
 			<key>cell</key>
@@ -227,6 +270,8 @@
 			<string>Contact me on twitter</string>
 		</dict>
 		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
 			<key>action</key>
 			<string>twitter2</string>
 			<key>cell</key>
@@ -240,9 +285,21 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>If you find this tweak to be useful, please consider a donation, or purchasing one of my paid tweaks. Check out FolderControllerXII, ModernBarz, ColorMyThreeD and EnableMeAhora; all are available in my repo and/or in Packix.</string>
+			<string>If you find this tweak to be useful, please consider a donation, or purchasing one of my paid tweaks. Check out FolderControllerXIII, ModernBarz, XConditoPro and EnableMeAhora; all are available in my repo and/or in Packix.</string>
 		</dict>
 		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
+			<key>action</key>
+			<string>repolink</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>👉 Add my repo for more tweaks.</string>
+		</dict>
+		<dict>
+			<key>alignment</key>
+			<integer>2</integer>
 			<key>action</key>
 			<string>donate</string>
 			<key>cell</key>
@@ -254,6 +311,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>AutoRotate  Plus</string>
+	<string>AutoRotate (iOS 10-14)</string>
 </dict>
 </plist>
