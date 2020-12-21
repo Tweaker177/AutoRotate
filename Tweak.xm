@@ -6,7 +6,7 @@
 const CGFloat firmware =  [[UIDevice currentDevice].systemVersion floatValue];
 
 static bool kEnabled = YES;
-static bool kiPadCapable= YES;
+static bool kiPadCapable = YES;
 //This rotates most apps. May cause issues in some apps on some devices (beta feature)
 
 static bool kWantsDeviceIdiom1;
