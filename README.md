@@ -1,6 +1,6 @@
 # AutoRotate
 Project files for AutoRotate tweak hosted by BigBoss. (Most current version is in YouRepo)
-A simple tweak originally made for iOS 10 to rotate the homescreen and lockscreen on devices that don't natively rotate, and for plus devices, it rotates apps and the App Switcher nicely. Additional features have been added as well with labels and the dock. Configure options from settings. The current tweak is working for iOS 10-14.3, all devices, with the main homescreen and lockscreen rotation working great.   Assistance with insets for the dock with stacked rotation for iOS 12 was given by @ SbhnKhrmn. 
+A simple tweak originally made for iOS 10 to rotate the homescreen and lockscreen on devices that don't natively rotate, and for plus devices, it rotates apps and the App Switcher nicely. Additional features have been added as well with labels and the dock. Configure options from settings. The current tweak is working for iOS 10-16, all devices, with the main homescreen and lockscreen rotation working great.   Assistance with insets for the dock with stacked rotation for iOS 12 was given by @ SbhnKhrmn. 
 
 MOST CURRENT VERSION: You can get it from https://i0s-tweak3r-betas.yourepo.com/pack/autorotate (it's free).
 
