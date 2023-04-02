@@ -106,7 +106,7 @@ return %orig;
 
 //works on some apps, about to try hooking the class for all instances
 //this method is experimental- not in any public builds yet
-%hook UIApplication
+%hook UIViewController
 -(bool)_ignoreAppSupportedOrientations {
 if(kEnabled && kRotateMoreApps) {
 return 1;
