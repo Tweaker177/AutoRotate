@@ -31,7 +31,7 @@ static bool kHideLabels;
 static bool twoRowTweakInstalled;  //currently only checking for Docky
 
 static bool kWantsCustomDock;   //Wants 12 icon dock (iOS 10-12.4.x only) FolderControllerXII and FCXIII both have custom number of icons in dock.
-
+static bool kRotateMoreApps;
 
 /*This is one of the main methods that rotates apps and makes them more like iPad, but it incorrectly splits or crashes some on compact devices and iPhoneX. Might need to use an AppList for this at some point.  */
 
@@ -104,7 +104,16 @@ return %orig;
 }
 %end
 
-
+//works on some apps, about to try hooking the class for all instances
+//this method is experimental- not in any public builds yet
+%hook UIApplication
+-(bool)_ignoreAppSupportedOrientations {
+if(kEnabled && kRotateMoreApps) {
+return 1;
+  }
+ return %orig;
+ }
+%end
 
 
  %hook SBRootIconListView
@@ -299,12 +308,15 @@ loadPrefs() {
     kCCisAlwaysRotated = [prefs boolForKey:@"key31"];
     //iOS 10 only so far.
 
-/****. Beta methods for rotating more apps and having more "medusa" capabilities. ***/
+// Beta methods for rotating more apps and having more "medusa" capabilities. 
 kiPadCapable = [prefs boolForKey:@"iPadCapable"];
 kWantsDeviceIdiom1 =[prefs boolForKey:@"wantsDeviceIdiom1"];
+kRotateMoreApps = [prefs boolForKey@"rotateMoreApps"];
 
 // Allows rotation while in icon editing mode on iOS 11-12.4.x. Found a similar method for 13+ just need to add it.
 kWantsDragging = [prefs boolForKey:@"wantsDragging"];
+
+
 
 }
 
