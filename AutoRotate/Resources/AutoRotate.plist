@@ -20,7 +20,7 @@
 			<key>icon</key>
 			<string>AutoRotate@2x.png</string>
 			<key>label</key>
-			<string>AutoRotate (iOS 10-14)</string>
+			<string>AutoRotate (iOS 10-16)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -299,7 +299,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>If you find this tweak to be useful, please consider a donation, or purchasing one of my paid tweaks. Check out FolderControllerXIII, ModernBarz, XConditoPro and EnableMeAhora; all are available in my repo and/or in Packix.</string>
+			<string>If you find this tweak to be useful, please consider a donation, or purchasing one of my paid tweaks. Supporting my music would be even cooler. Look for Xeroform on all major platforms, like and subscribe.  Check out FolderControllerXIII (or 14 if you are brave), ModernBarz, XConditoPro and EnableMeAhora; all are available in my repo.</string>
 		</dict>
 		<dict>
 			<key>alignment</key>
@@ -325,6 +325,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>AutoRotate (iOS 10-14)</string>
+	<string>AutoRotate (iOS 10-16)</string>
 </dict>
 </plist>
