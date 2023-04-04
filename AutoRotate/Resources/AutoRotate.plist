@@ -130,6 +130,20 @@
 			<key>label</key>
 			<string>Mini iPad mode(beta)</string>
 		</dict>
+<dict>
+			<key>PostNotification</key>
+			<string>com.i0stweak3r.autorotate/saved</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.i0stweak3r.autorotate</string>
+			<key>key</key>
+			<string>rotateMoreApps</string>
+			<key>label</key>
+			<string>Rotate more apps(beta)</string>
+		</dict>
 		<dict>
 			<key>PostNotification</key>
 			<string>com.i0stweak3r.autorotate/saved</string>
